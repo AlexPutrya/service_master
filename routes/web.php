@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Pages\Main')->name('main');
+Route::get('/repairs', 'Pages\Repairs')->name('repairs');
+Route::get('/sendings', 'Pages\Sending')->name('sending');
+Route::get('/partners', 'Pages\Partners')->name('partners');
