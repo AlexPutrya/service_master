@@ -1,9 +1,9 @@
-@extends('pages/layout')
+@extends('../layout')
 
 @section('title', 'Ремонты')
 
 @section('content')
-    <a href="#" class="btn btn-outline-success">Новая заявка на ремонт</a>
+    <a href="{{ route('repair_form') }}" class="btn btn-outline-success">Новая заявка на ремонт</a>
     <form>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Статус</label>
