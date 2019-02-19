@@ -17,3 +17,5 @@ Route::get('/sendings', 'Pages\Sending')->name('sending');
 Route::get('/partners', 'Pages\Partners')->name('partners');
 
 Route::match(['get', 'post'], '/repair_form', 'Forms\RepairForm')->name('repair_form');
+
+Auth::routes();
