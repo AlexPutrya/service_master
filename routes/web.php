@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'Pages\Main')->name('main');
+Route::get('/', 'Pages\Root')->name('root');
+Route::get('/main', 'Pages\Main')->name('main');
 Route::get('/repairs', 'Pages\Repairs')->name('repairs');
 Route::get('/sendings', 'Pages\Sending')->name('sending');
 Route::get('/partners', 'Pages\Partners')->name('partners');
