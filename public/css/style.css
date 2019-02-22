@@ -1,0 +1,15 @@
+.jumbotron, .card {
+    text-align: center;
+}
+.card .badge {
+    text-align: left;
+}
+.bl-right {
+    display: inline-block;
+    right: 0;
+}
+
+.bl-left{
+    display: inline-block;
+    left: 0;
+}

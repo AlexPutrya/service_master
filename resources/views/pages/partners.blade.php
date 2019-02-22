@@ -3,7 +3,7 @@
 @section('title', 'Партнеры')
 
 @section('content')
-    <a href="#" class="btn btn-outline-success">Новый партнер</a>
+    <a href="{{ route('partner_form') }}" class="btn btn-outline-success">Новый партнер</a>
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
