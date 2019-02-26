@@ -12,7 +12,7 @@
     </div> -->
     <div class="container">
 
-        <a href="{{ route('repair_form') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
+        <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
         <form>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Статус</label>

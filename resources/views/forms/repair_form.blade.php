@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container">
-        <h2>Ремонт №</h2>
-        <form method="POST" action="{{ route('repair_form') }}">
+        <h2>Ремонт № {{$userId}}</h2>
+        <form method="POST" action="{{ route('new_repair') }}">
         @csrf
             <div class="form-group">
                 <label for="disabledTextInput">Дата регистрации</label>
