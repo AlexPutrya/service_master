@@ -13,8 +13,8 @@ class CreateRepairTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('users')) {
-            Schema::create('repair', function (Blueprint $table) {
+        if (!Schema::hasTable('repairs')) {
+            Schema::create('repairs', function (Blueprint $table) {
                 $table->increments('id');
                 $table->date('register_date');
                 $table->date('end_date')->nullable();
@@ -25,6 +25,7 @@ class CreateRepairTable extends Migration
                 $table->string('serial')->nullable();
                 $table->string('complect')->nullable();
                 $table->string('defect')->nullable();
+                $table->integer('owner')->unsigned();
                 $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
                 
             });
@@ -39,6 +40,6 @@ class CreateRepairTable extends Migration
     public function down()
     {
         
-        Schema::dropIfExists('repair');
+        Schema::dropIfExists('repairs');
     }
 }
