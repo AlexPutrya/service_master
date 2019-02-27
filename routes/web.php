@@ -12,13 +12,16 @@
 */
 
 Route::get('/', 'Pages\Root')->name('root');
-Route::get('/main', 'Pages\Main')->name('main');
-Route::get('/repairs', 'Pages\Repairs')->name('repairs');
-Route::get('/sendings', 'Pages\Sending')->name('sending');
-Route::get('/partners', 'Pages\Partners')->name('partners');
 
-Route::match(['get', 'post'], '/new_repair', 'Forms\RepairForm@index')->name('new_repair');
-Route::match(['get', 'post'], '/repair/{id}', 'Forms\RepairForm@update')->name('update_repair_form');
-Route::match(['get', 'post'], '/partner_form', 'Forms\PartnerForm')->name('partner_form');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/main', 'Pages\Main')->name('main');
+    Route::get('/repairs', 'Pages\Repairs')->name('repairs');
+    Route::get('/sendings', 'Pages\Sending')->name('sending');
+    Route::get('/partners', 'Pages\Partners')->name('partners');
+
+    Route::match(['get', 'post'], '/new_repair', 'Forms\RepairForm@index')->name('new_repair');
+    Route::match(['get', 'post'], '/repair/{id}', 'Forms\RepairForm@update')->name('update_repair_form');
+    Route::match(['get', 'post'], '/partner_form', 'Forms\PartnerForm')->name('partner_form');
+});
 
 Auth::routes();
