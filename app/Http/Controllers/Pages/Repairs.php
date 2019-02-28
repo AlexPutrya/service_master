@@ -15,6 +15,7 @@ class Repairs extends Controller {
                             ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
                             ->where('owner', '=', $userId)
                             ->orderBy('register_date', 'DESC')
+                            ->orderBy('id', 'DESC')
                             ->get();
             return view('pages/repairs', ['repairs' => $repairs]);
     }
