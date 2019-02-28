@@ -15,7 +15,7 @@ Route::get('/', 'Pages\Root')->name('root');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/main', 'Pages\Main')->name('main');
-    Route::get('/repairs', 'Pages\Repairs')->name('repairs');
+    Route::match(['get', 'post'], '/repairs', 'Pages\Repairs')->name('repairs');
     Route::get('/sendings', 'Pages\Sending')->name('sending');
     Route::get('/partners', 'Pages\Partners')->name('partners');
 

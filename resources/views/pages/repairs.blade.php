@@ -13,15 +13,18 @@
     <div class="container">
 
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
-        <form>
+        <form id="filter" action="{{ route('repairs') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Статус</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option selected>В обработке</option>
-                    <option>Завершеные</option>
-                    <option>Не завершенные</option>
-                    <option>Принят</option>
-                    <option>Все</option>
+                <select name="status" class="form-control" id="exampleFormControlSelect1" 
+                    onchange="event.preventDefault();
+                        document.getElementById('filter').submit();">
+                    <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
+                    <option value="Завершеные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершеные</option>
+                    <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
+                    <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
+                    <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>
                 </select>
             </div>
         </form>
