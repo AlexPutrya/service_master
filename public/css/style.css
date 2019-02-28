@@ -1,15 +1,27 @@
 .jumbotron, .card {
     text-align: center;
 }
-.card .badge {
-    text-align: left;
-}
-.bl-right {
-    display: inline-block;
-    right: 0;
+
+.card-row {
+    display: block;
+    position: relative;
+    height: 20px;
 }
 
-.bl-left{
+.el-right{
+    position: absolute;
     display: inline-block;
-    left: 0;
+    right: 5%;
+}
+
+.el-left{
+    position: absolute;
+    display: inline-block;
+    left: 5%;
+}
+
+@media(max-width: 760px){
+    .card-cont{
+        margin-top: 7%;
+    }
 }

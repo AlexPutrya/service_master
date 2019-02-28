@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class RepairForm extends Controller {
-    
+
+    public function userId(){
+        return Auth::id();
+    }
+
     public function index(Request $request){
         if($request->isMethod('post')){
             $data = $request->all();
-            $userId = Auth::id();
+            // $userId = Auth::id();
             DB::table('repairs')->insert([
                 'register_date' => $request->register_date,
                 'end_date' => $request->end_date,
@@ -23,7 +27,7 @@ class RepairForm extends Controller {
                 'serial' => $request->serial,
                 'complect' => $request->complect,
                 'defect' => $request->defect,
-                'owner' => $userId
+                'owner' => $this->userId()
             ]);
             return redirect()->route('repairs');
         }else{
@@ -31,10 +35,16 @@ class RepairForm extends Controller {
         }
     }
 
-    public function update(Request $request, $id){
+    public function edit(Request $request, $id){
+        // если вызов происходит методом get, загружем форму
         if($request->isMethod('post')){
             //получаем данные из request и обновляем запись в бд
         }else{
+            $repair = DB::table('repairs')
+                        ->where('owner', '=', $this->userId())
+                        ->where('id', '=', $id)
+                        ->first();
+            return view('forms/repair_form', ['repair' => $repair]);
             // получаем данные по id из бд и отправляем в view
         }
     }

@@ -30,15 +30,30 @@
         <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
             <div class="card">
                 <div class="card-header" role="tab" id="headingOne1">
-                    {{ $repair->register_date }}
-                    <h6><span class="badge badge-pill badge-success">{{ $repair->status }}</span></h6>
-                    <h4 class="card-text"> <i class="fas fa-tools"></i> {{ $repair->device }} </h4>
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{ $repair->id }}" aria-expanded="true" aria-controls="collapseOne{{ $repair->id }}">
-                        <h5 class="mb-0">
-                            Заявка на ремонт № {{ $repair->id }} <i class="fas fa-angle-down rotate-icon"></i>
-                        </h5>
-                    </a>
-                    <a href="#" class="bl-left btn btn-outline-secondary"><i class="far fa-edit"></i></a>
+                    <div class="card-row">
+                        <div class="el-right">
+                            <h6><span class="badge badge-pill badge-success">{{ $repair->status }}</span></h6>
+                        </div>
+                        <div class="el-left">
+                            {{ $repair->register_date }}
+                        </div>
+                    </div>
+                    <div class="card-cont">
+                        <h4 class="card-text"> <i class="fas fa-tools"></i> {{ $repair->device }} </h4>
+                        Заявка на ремонт № {{ $repair->id }}
+                        <div class="card-row">
+                            <div class="el-left">
+                                <a href="/repair/{{ $repair->id }}" class="btn btn-outline-secondary"><i class="far fa-edit"></i></a>
+                            </div>
+                            <div class="el-right">
+                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{ $repair->id }}" aria-expanded="true" aria-controls="collapseOne{{ $repair->id }}">
+                                    <h2 class="mb-0">
+                                        <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="collapseOne{{ $repair->id }}" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                     <div class="card-body">

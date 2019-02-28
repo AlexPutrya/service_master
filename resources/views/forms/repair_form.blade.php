@@ -4,12 +4,12 @@
 
 @section('content')
     <div class="container">
-        <h2>Ремонт №</h2>
+        <h2>{{ isset($repair->id) ? 'Ремонт №'.$repair->id : 'Новый ремонт' }}</h2>
         <form method="POST" action="{{ route('new_repair') }}">
         @csrf
             <div class="form-group">
                 <label for="disabledTextInput">Дата регистрации</label>
-                <input type="date" id="start" name="register_date" value="{{ date('d.m.Y') }}">
+                <input type="date" id="start" name="register_date" value="{{ isset($repair->register_date) ? '$repair->register_date' : date('d.m.Y') }}">
             </div>
             <div class="form-group">
                 <label for="disabledTextInput">Дата Окончания</label>
@@ -27,27 +27,27 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Клиент</label>
-                <input name="client" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ф.И.О.">
+                <input name="client" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ф.И.О." value="{{ isset($repair->client) ? $repair->client : '' }}">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput2">Номер телефона</label>
-                <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="телефон">
+                <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="телефон" value="{{ isset($repair->phone) ? $repair->phone : '' }}">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput3">Устройство</label>
-                <input name="device" type="text" class="form-control" id="exampleFormControlInput1" placeholder="название и модель">
+                <input name="device" type="text" class="form-control" id="exampleFormControlInput1" placeholder="название и модель" value="{{ isset($repair->device) ? $repair->device : '' }}">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput4">Серийный номер*</label>
-                <input name="serial" type="text" class="form-control" id="exampleFormControlInput1" placeholder="S/N">
+                <input name="serial" type="text" class="form-control" id="exampleFormControlInput1" placeholder="S/N" value="{{ isset($repair->serial) ? $repair->serial : '' }}">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Комплектация</label>
-                <textarea name="complect" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea name="complect" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ isset($repair->complect) ? $repair->complect : '' }}</textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea2">Неисправность</label>
-                <textarea name="defect" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea name="defect" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ isset($repair->defect) ? $repair->defect : '' }}</textarea>
             </div>
             <div class="text-right">
                 <button type="submit" class="btn btn-outline-success">Сохранить</button>
