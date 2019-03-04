@@ -16,8 +16,8 @@ Route::get('/', 'Pages\Root')->name('root');
 Route::middleware(['auth'])->group(function(){
     Route::get('/main', 'Pages\Main')->name('main');
     Route::match(['get', 'post'], '/repairs', 'Pages\Repairs')->name('repairs');
-    Route::get('/sendings', 'Pages\Sending')->name('sending');
-    Route::get('/partners', 'Pages\Partners')->name('partners');
+    // Route::get('/sendings', 'Pages\Sending')->name('sending');
+    // Route::get('/partners', 'Pages\Partners')->name('partners');
 
     Route::match(['get', 'post'], '/new_repair', 'Forms\RepairForm@index')->name('new_repair');
     Route::match(['get', 'post'], '/repair/{id}', 'Forms\RepairForm@edit')->name('edit_repair_form');

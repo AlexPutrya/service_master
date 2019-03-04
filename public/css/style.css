@@ -1,7 +1,7 @@
 .jumbotron, .card {
     text-align: center;
 }
-
+/* 
 .card-row {
     display: block;
     position: relative;
@@ -18,10 +18,160 @@
     position: absolute;
     display: inline-block;
     left: 5%;
+} */
+
+/* Список ремонтов карточка ремонта */
+
+.repair-block{
+    display: flex;
+    margin-top: 5px;
+    background-color: #349980;
+}
+
+.date-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+    color: white;
+    text-align: center;
+    width: 20%;
+}
+
+.content-block{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+}
+.content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#repair_edit{
+    text-decoration: none;
+    color: grey;
+}
+
+
+/* Список ремонтов карточка ремонта */
+
+
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    margin: 0;
+    width: 100%;
+    background-color: #22B573;
+    text-align: right;
+}
+
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.banner-content h1{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+.image{
+    width: 50%;
+}
+
+.image img{
+    width: 100%;
+}
+
+.root-content{
+    margin-top: 50px;
+    margin-bottom: 50px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+}
+.cont img{
+    width: 40%;
+}
+
+.cont h4{
+    margin-top: 20px;
+}
+
+.text{
+    width: 60%;
+}
+
+footer{
+    height: 10vh;
+    background-color: #22B573;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+footer li{
+    display: inline-block;
 }
 
 @media(max-width: 760px){
     .card-cont{
         margin-top: 7%;
     }
+
+    .date-block{
+        font-size: 3vw;
+    }
+
+
+    .banner{
+        flex-direction: column;
+    }
+
+    .banner-content{
+        width: 100%;
+    }
+
+    .image{
+        width: 100%;
+    }
+
+    .root-content{
+        flex-direction: column;
+    }
+
+    .cont{
+        width: 90%;
+    }
+
+    .cont img{
+        width: 70%;
+    }
+
+    .text{
+        width: 80%;
+    }
+
 }

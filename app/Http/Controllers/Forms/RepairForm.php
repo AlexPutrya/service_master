@@ -9,14 +9,10 @@ use App\Http\Controllers\Controller;
 
 class RepairForm extends Controller {
 
-    public function userId(){
-        return Auth::id();
-    }
-
+    // get => Возвращаем пустую форму
+    // post => Сохраняем дынные заполненные пользователем, и пренаправляем
     public function index(Request $request){
         if($request->isMethod('post')){
-            $data = $request->all();
-            // $userId = Auth::id();
             DB::table('repairs')->insert([
                 'register_date' => $request->register_date,
                 'end_date' => $request->end_date,
@@ -27,7 +23,7 @@ class RepairForm extends Controller {
                 'serial' => $request->serial,
                 'complect' => $request->complect,
                 'defect' => $request->defect,
-                'owner' => $this->userId()
+                'owner' => Auth::id()
             ]);
             return redirect()->route('repairs');
         }else{
@@ -35,17 +31,30 @@ class RepairForm extends Controller {
         }
     }
 
+    // get => Получем данные по id и заполняем форму для редактирования
+    // post => Получаем id и параметры и обновлям в бд
     public function edit(Request $request, $id){
-        // если вызов происходит методом get, загружем форму
         if($request->isMethod('post')){
-            //получаем данные из request и обновляем запись в бд
+            DB::table('repairs')
+                        ->where('owner', '=', Auth::id())
+                        ->where('id', '=', $id)
+                        ->update([
+                            'end_date' => $request->end_date,
+                            'status' => $request->status,
+                            'client' => $request->client,
+                            'phone' => $request->phone,
+                            'device' => $request->device,
+                            'serial' => $request->serial,
+                            'complect' => $request->complect,
+                            'defect' => $request->defect
+                        ]);
+            return redirect()->route('repairs');
         }else{
             $repair = DB::table('repairs')
-                        ->where('owner', '=', $this->userId())
+                        ->where('owner', '=', Auth::id())
                         ->where('id', '=', $id)
                         ->first();
             return view('forms/repair_form', ['repair' => $repair]);
-            // получаем данные по id из бд и отправляем в view
         }
     }
 }

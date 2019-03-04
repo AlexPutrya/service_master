@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="fas fa-tools"></i> <span style="color: #38C172">С</span>ервис<span style="color: #38C172">М</span>астер
+                    <i class="fas fa-tools"></i> <span style="color: #349980">С</span>ервис<span style="color: #349980">М</span>астер
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -58,12 +58,6 @@
                             <li class="nav-item {{ request()->is('repairs*') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('repairs') }}">Ремонты</a>
                             </li>
-                            <li class="nav-item {{ request()->is('sending*') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('sending') }}">Отправки поставщикам</a>
-                            </li>
-                            <li class="nav-item {{ request()->is('partners*') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('partners') }}">Партнеры</a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -88,7 +82,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

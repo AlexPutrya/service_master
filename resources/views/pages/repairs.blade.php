@@ -29,7 +29,7 @@
             </div>
         </form>
         @foreach ($repairs as $repair)
-
+<!-- 
         <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
             <div class="card">
                 <div class="card-header" role="tab" id="headingOne1">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -86,6 +86,30 @@
                     <p class="card-text"> Описание неисправности: {{ $repair->defect }}</p>
                 </div>
             </div> -->
+
+            <div class="repair-block">
+                <div class="date-block">
+                    <div>
+                        <i class="fas fa-tools"></i> #{{ $repair->id }}
+                    </div>
+                    <div>
+                        {{ $repair->register_date }}
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="content-container">
+                        <h5>{{ $repair->device }} </h5>
+                        <h6><span class="badge badge-pill badge-success">{{ $repair->status }}</span></h6>
+                    </div>
+                    Описание неисправности: {{ $repair->defect }}
+                    <div class="content-container">
+                        <div>
+                        <i class="far fa-user"></i> {{ $repair->client }}  <i class="fas fa-mobile-alt"></i> {{ $repair->phone }}
+                        </div>
+                        <a id="repair_edit" href="/repair/{{ $repair->id }}" ><i class="far fa-edit"></i> Редактировать</a>
+                    </div>
+                </div>
+            </div>
         @endforeach
     </div>
 @endsection
