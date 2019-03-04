@@ -5,8 +5,9 @@
 @section('content')
     <div class="banner">
         <div class="banner-content">
-            <h1>В помощь сервисным мастерам !</h1>
-            <a class="btn btn-outline-light btn-lg btn-block" href="">Начать работу</a>
+            <h2>В помощь сервисным мастерам !</h2>
+            <p>SM - это онлайн система управления сервисными ремонтами</p>
+            <a class="btn btn-outline-light btn-lg btn-block" href="">Начать работу бесплатно</a>
         </div>
         <div class="image">
             <img src="{{ asset('img/banner.png') }}" alt="">
@@ -36,12 +37,14 @@
         </div>
     </div>
     <footer>
-        <ul>
-            <li>О проекте</li>
-            <li>Помощь проекту</li>
-            <li>Рекламодателям</li>
-            <li>Обратная связь</li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li>О проекте</li>
+                <li>Помощь проекту</li>
+                <li>Рекламодателям</li>
+                <li>Обратная связь</li>
+            </ul>
+        </div>
     </footer>
 
 @endsection

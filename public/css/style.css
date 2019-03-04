@@ -1,31 +1,28 @@
-.jumbotron, .card {
+
+.main{
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.info-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
-/* 
-.card-row {
-    display: block;
-    position: relative;
-    height: 20px;
+
+.navbar{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.el-right{
-    position: absolute;
-    display: inline-block;
-    right: 5%;
-}
 
-.el-left{
-    position: absolute;
-    display: inline-block;
-    left: 5%;
-} */
 
 /* Список ремонтов карточка ремонта */
 
 .repair-block{
     display: flex;
     margin-top: 5px;
-    background-color: #349980;
+    background-color: #22B573;
 }
 
 .date-block{
@@ -70,7 +67,6 @@
     margin: 0;
     width: 100%;
     background-color: #22B573;
-    text-align: right;
 }
 
 .banner-content{
@@ -78,13 +74,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-}
-
-.banner-content h1{
     text-align: center;
+    width: 50%;
     color: white;
     font-family: sans-serif;
+}
+
+.banner-content h2{
     text-transform: uppercase;
 }
 .image{
@@ -96,12 +92,13 @@
 }
 
 .root-content{
-    margin-top: 50px;
-    margin-bottom: 50px; 
+    padding-top: 50px;
+    padding-bottom: 50px; 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .cont{
     display: flex;
@@ -115,6 +112,7 @@
 }
 
 .cont h4{
+    color: gray;
     margin-top: 20px;
 }
 
@@ -123,6 +121,9 @@
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 10vh;
     background-color: #22B573;
 }
@@ -133,6 +134,8 @@ footer ul {
 }
 
 footer li{
+    margin-right: 5px;
+    color: white;
     display: inline-block;
 }
 
@@ -167,7 +170,7 @@ footer li{
     }
 
     .cont img{
-        width: 70%;
+        width: 50%;
     }
 
     .text{

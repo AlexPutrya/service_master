@@ -37,7 +37,6 @@ class RepairForm extends Controller {
         if($request->isMethod('post')){
             DB::table('repairs')
                         ->where('owner', '=', Auth::id())
-                        ->where('id', '=', $id)
                         ->update([
                             'end_date' => $request->end_date,
                             'status' => $request->status,

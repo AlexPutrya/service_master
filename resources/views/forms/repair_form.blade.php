@@ -3,7 +3,7 @@
 @section('title', 'Ремонт')
 
 @section('content')
-    <div class="container">
+    <div class="container main">
         <h2>{{ isset($repair->id) ? 'Ремонт №'.$repair->id : 'Новый ремонт' }}</h2>
         <form method="POST" action="{{ isset($repair->id) ? route('edit_repair_form', ['id' => $repair->id]) : route('new_repair') }}">
         @csrf
@@ -18,11 +18,20 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Статус</label>
                 <select name="status" class="form-control" id="exampleFormControlSelect1">
-                    <option value="В обработке" {{ $repair->status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                    <option value="Завершеные" {{ $repair->status == 'Завершенные' ? 'selected' : ''}}>Завершеные</option>
-                    <option value="Не завершенные" {{ $repair->status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
-                    <option value="Принят" {{ $repair->status == 'Принят' ? 'selected' : ''}}>Принят</option>
-                    <option value="Все" {{ $repair->status == 'Все' ? 'selected' : ''}}>Все</option>
+                    @if(isset($repair->status))
+                        <option value="В обработке" {{ $repair->status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
+                        <option value="Завершеные" {{ $repair->status == 'Завершенные' ? 'selected' : ''}}>Завершеные</option>
+                        <option value="Не завершенные" {{ $repair->status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
+                        <option value="Принят" {{ $repair->status == 'Принят' ? 'selected' : ''}}>Принят</option>
+                        <option value="Все" {{ $repair->status == 'Все' ? 'selected' : ''}}>Все</option>
+                    @else
+                        <option value="В обработке" selected>В обработке</option>
+                        <option value="Завершеные">Завершеные</option>
+                        <option value="Не завершенные">Не завершенные</option>
+                        <option value="Принят">Принят</option>
+                        <option value="Все">Все</option>
+
+                    @endif
                 </select>
             </div>
             <div class="form-group">
