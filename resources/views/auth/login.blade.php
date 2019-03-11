@@ -53,18 +53,35 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-success">
                                     {{ __('Войти') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-light" href="{{ route('password.request') }}">
                                         {{ __('Забыли пароль?') }}
                                     </a>
                                 @endif
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="browser-info">
+                <h5>Для более быстрой работы используйте один из браузеров</h5>
+                <div class="browsers">
+                    <div class="browser">
+                        <img src="{{ asset('img/browsers/opera-logo.png') }}" alt="Opera">
+                        <a href="https://www.opera.com/ru" target="_blank">Opera</a>
+                    </div>
+                    <div class="browser">
+                        <img src="{{ asset('img/browsers/chrome-logo.png') }}" alt="Chrome">
+                        <a href="https://www.google.com/intl/ru_ALL/chrome/" target="_blank">Chrome</a>
+                    </div>
+                    <div class="browser">
+                        <img src="{{ asset('img/browsers/firefox-logo.png') }}" alt="Firefox">
+                        <a href="https://www.mozilla.org/ru/firefox/new/" target="_blank">Firefox</a>
+                    </div>
                 </div>
             </div>
         </div>

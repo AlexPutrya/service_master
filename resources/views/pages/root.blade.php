@@ -37,13 +37,19 @@
         </div>
     </div>
     <footer>
-        <div class="container">
-            <ul>
-                <li>О проекте</li>
-                <li>Помощь проекту</li>
-                <li>Рекламодателям</li>
-                <li>Обратная связь</li>
-            </ul>
+        <div class="container both-navbar">
+                <div class="nav-item"> 
+                    <a class="nav-link" href="#">О проекте</a>
+                </div>
+                <div class="nav-item"> 
+                    <a class="nav-link" href="#">Помощь проекту</a>
+                </div>
+                <div class="nav-item"> 
+                    <a class="nav-link" href="#">Рекламодателям</a>
+                </div>
+                <div class="nav-item"> 
+                    <a class="nav-link" href="#">Обратная связь</a>
+                </div>
         </div>
     </footer>
 

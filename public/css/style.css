@@ -121,24 +121,52 @@
 }
 
 footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 10vh;
     background-color: #22B573;
 }
 
-footer ul {
-    margin: 0;
-    padding: 0;
+.both-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
 }
 
-footer li{
-    margin-right: 5px;
+.both-navbar a{
     color: white;
-    display: inline-block;
 }
 
+/* Карточка применется в формах входа, регистрации, восстановления пароля */
+.card{
+    margin-top: 20px;
+}
+
+.card-header{
+    background-color: #22B573;
+    color: white;
+    font-size: 20px;
+}
+
+.browser-info{
+    margin: 5%;
+    text-align: center;
+}
+.browsers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.browser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin: 0px 2% 0px 2%;
+}
+.browser img{
+    width: 50%;
+}
 @media(max-width: 760px){
     .card-cont{
         margin-top: 7%;
@@ -175,6 +203,14 @@ footer li{
 
     .text{
         width: 80%;
+    }
+
+    .both-navbar {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav-item{
+        border-bottom: 1px solid white; 
     }
 
 }
