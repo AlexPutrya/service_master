@@ -13,7 +13,7 @@
                         onchange="event.preventDefault();
                             document.getElementById('filter').submit();">
                         <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                        <option value="Завершеные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершеные</option>
+                        <option value="Завершенные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
                         <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
                         <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
                         <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>

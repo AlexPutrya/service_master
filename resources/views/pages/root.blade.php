@@ -7,7 +7,7 @@
         <div class="banner-content">
             <h2>В помощь сервисным мастерам !</h2>
             <p>SM - это онлайн система управления сервисными ремонтами</p>
-            <a class="btn btn-outline-light btn-lg btn-block" href="">Начать работу бесплатно</a>
+            <a class="btn btn-outline-light btn-lg btn-block" href="{{ route('register') }}">Начать работу бесплатно</a>
         </div>
         <div class="image">
             <img src="{{ asset('img/banner.png') }}" alt="">
