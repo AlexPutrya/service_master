@@ -13,7 +13,7 @@
                         onchange="event.preventDefault();
                             document.getElementById('filter').submit();">
                         <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                        <option value="Завершенные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
+                        <option value="Завершеные" {{ $status == 'Завершеные' ? 'selected' : ''}}>Завершенные</option>
                         <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
                         <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
                         <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>
@@ -34,7 +34,7 @@
                 <div class="repair-block">
                     <div class="date-block">
                         <div>
-                            <i class="fas fa-tools"></i> #{{ $repair->id }}
+                            <i class="fas fa-tools"></i> {{ $repair->id }}
                         </div>
                         <div>
                             {{ $repair->register_date }}

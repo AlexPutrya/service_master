@@ -145,7 +145,7 @@ footer{
     color: white;
     font-size: 20px;
 }
-
+/* Блок с выводом информации о браузерах */
 .browser-info{
     margin: 5%;
     text-align: center;
@@ -167,6 +167,17 @@ footer{
 .browser img{
     width: 50%;
 }
+
+/* Профиль пользователя */
+.profile-title{
+    text-align: center;
+}
+
+.profile-info{
+    color: grey;
+}
+
+
 @media(max-width: 760px){
     .card-cont{
         margin-top: 7%;
