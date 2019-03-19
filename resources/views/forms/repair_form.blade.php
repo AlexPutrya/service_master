@@ -7,26 +7,20 @@
         <h2>{{ isset($repair->id) ? 'Ремонт №'.$repair->id : 'Новый ремонт' }}</h2>
         <form method="POST" action="{{ isset($repair->id) ? route('edit_repair_form', ['id' => $repair->id]) : route('new_repair') }}">
         @csrf
-            <div class="form-group">
-                <label for="disabledTextInput">Дата регистрации</label>
-                <input type="date" id="start" name="register_date" value="{{ isset($repair->register_date) ? '$repair->register_date' : date('d.m.Y') }}">
-            </div>
-            <div class="form-group">
-                <label for="disabledTextInput">Дата Окончания</label>
-                <input type="date" id="start" name="end_date" value="{{ date('d.m.Y') }}">
-            </div>
+            <p> Дата регистрации: {{ isset($repair->register_date) ? $repair->register_date : date('d.m.Y') }} </p>
+            <p> Дата окончания: {{ isset($repair->end_date) ? $repair->end_date : '*дата окончания будет установлена при выборе статуса "Завершен"' }} </p>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Статус</label>
                 <select name="status" class="form-control" id="exampleFormControlSelect1">
                     @if(isset($repair->status))
                         <option value="В обработке" {{ $repair->status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                        <option value="Завершеные" {{ $repair->status == 'Завершенные' ? 'selected' : ''}}>Завершеные</option>
+                        <option value="Завершенные" {{ $repair->status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
                         <option value="Не завершенные" {{ $repair->status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
                         <option value="Принят" {{ $repair->status == 'Принят' ? 'selected' : ''}}>Принят</option>
                         <option value="Все" {{ $repair->status == 'Все' ? 'selected' : ''}}>Все</option>
                     @else
                         <option value="В обработке" selected>В обработке</option>
-                        <option value="Завершеные">Завершеные</option>
+                        <option value="Завершенные">Завершенные</option>
                         <option value="Не завершенные">Не завершенные</option>
                         <option value="Принят">Принят</option>
                         <option value="Все">Все</option>

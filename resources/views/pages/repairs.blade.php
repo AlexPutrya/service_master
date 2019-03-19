@@ -13,7 +13,7 @@
                         onchange="event.preventDefault();
                             document.getElementById('filter').submit();">
                         <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                        <option value="Завершеные" {{ $status == 'Завершеные' ? 'selected' : ''}}>Завершенные</option>
+                        <option value="Завершенные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
                         <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
                         <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
                         <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>
@@ -50,6 +50,7 @@
                             <div>
                             <i class="far fa-user"></i> {{ $repair->client }}  <i class="fas fa-mobile-alt"></i> {{ $repair->phone }}
                             </div>
+                            <a id="repair_edit" href="/act_of_repair/{{ $repair->id }}" ><i class="fas fa-print"></i> Акт приема-передачи</a>
                             <a id="repair_edit" href="/repair/{{ $repair->id }}" ><i class="far fa-edit"></i> Редактировать</a>
                         </div>
                     </div>

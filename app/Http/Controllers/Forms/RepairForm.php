@@ -9,13 +9,19 @@ use App\Http\Controllers\Controller;
 
 class RepairForm extends Controller {
 
+    public $end_date = NULL;
+
     // get => Возвращаем пустую форму
     // post => Сохраняем дынные заполненные пользователем, и пренаправляем
     public function index(Request $request){
         if($request->isMethod('post')){
+            $register_date =  date("Y-m-d H:i:s");
+            if($request->status == "Завершенные"){
+                $this->end_date = date("Y-m-d H:i:s");
+            }
             DB::table('repairs')->insert([
-                'register_date' => $request->register_date,
-                'end_date' => $request->end_date,
+                'register_date' => $register_date,
+                'end_date' => $this->end_date,
                 'status' => $request->status,
                 'client' => $request->client,
                 'phone' => $request->phone,
@@ -35,10 +41,22 @@ class RepairForm extends Controller {
     // post => Получаем id и параметры и обновлям в бд
     public function edit(Request $request, $id){
         if($request->isMethod('post')){
+            $repair = DB::table('repairs')
+                        ->where('owner', '=', Auth::id())
+                        ->where('id', '=', $id)
+                        ->first();
+            if( $repair->end_date != NULL){
+                $this->end_date = $repair->end_date;
+            }else{
+                if($request->status == "Завершенные"){
+                    $this->end_date = date("Y-m-d H:i:s");
+                }
+            }
             DB::table('repairs')
                         ->where('owner', '=', Auth::id())
+                        ->where('id', '=', $id)
                         ->update([
-                            'end_date' => $request->end_date,
+                            'end_date' => $this->end_date,
                             'status' => $request->status,
                             'client' => $request->client,
                             'phone' => $request->phone,
