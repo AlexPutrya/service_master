@@ -7,8 +7,20 @@
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
         <form id="filter" action="{{ route('repairs') }}" method="POST">
                 @csrf
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Что искать?" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <select name="" class="form-control" id="exampleFormControlSelect1">
+                            <option value="repiar_id">№ ремонта</option>
+                            <option value="phone">Телефон </option>
+                            <option value="client">ФИО клиента</option>
+                            <option value="device">Название устройства</option>
+                        </select>
+                        <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Статус</label>
+                    <label for="exampleFormControlSelect1"><i class="fas fa-filter"></i> Статус</label>
                     <select name="status" class="form-control" id="exampleFormControlSelect1" 
                         onchange="event.preventDefault();
                             document.getElementById('filter').submit();">

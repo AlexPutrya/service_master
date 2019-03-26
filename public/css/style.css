@@ -177,6 +177,11 @@ footer{
     color: grey;
 }
 
+/* Убираем бутстраповскую синюю обводку  */
+input, select, button, textarea {
+    outline: none !important;
+    box-shadow: none!important;
+}
 
 @media(max-width: 760px){
     .card-cont{
