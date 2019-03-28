@@ -5,7 +5,7 @@
 @section('content')
     <div class="container main">
         <h2>{{ isset($repair->id) ? 'Ремонт №'.$repair->id : 'Новый ремонт' }}</h2>
-        <form method="POST" action="{{ isset($repair->id) ? route('edit_repair_form', ['id' => $repair->id]) : route('new_repair') }}">
+        <form method="POST" action="{{ isset($repair->id) ? route('edit_repair_form', ['id' => $repair->id]) : route('new_repair') }}" autocomplete="off">
         @csrf
             <p> Дата регистрации: {{ isset($repair->register_date) ? $repair->register_date : date('d.m.Y') }} </p>
             <p> Дата окончания: {{ isset($repair->end_date) ? $repair->end_date : '*дата окончания будет установлена при выборе статуса "Завершен"' }} </p>

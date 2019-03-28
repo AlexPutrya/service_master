@@ -5,7 +5,7 @@
 @section('content')
     <div class="container main">
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
-        <form id="filter" action="{{ route('repairs_filter') }}" method="POST">
+        <form id="filter" action="{{ route('repairs_filter') }}" method="POST" autocomplete="off">
                 @csrf
                 <div class="input-group mb-3">
                     <input name="search" type="text" class="form-control" placeholder="Что искать?" aria-label="Recipient's username" aria-describedby="button-addon2">

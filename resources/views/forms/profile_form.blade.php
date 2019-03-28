@@ -5,7 +5,7 @@
 @section('content')
     <div class="container main profile">
         <h2 class="profile-title">Профиль пользователя</h2>
-        <form method="POST" action="{{ route('profile') }}">
+        <form method="POST" action="{{ route('profile') }}" autocomplete="off">
         @csrf
             <h4>Общие данные</h4>
             <p><span class="profile-info">*будут использованы для формирования печатной формы "Акт приема передачи в ремонт"</span></p>
