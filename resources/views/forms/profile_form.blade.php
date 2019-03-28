@@ -25,7 +25,7 @@
                 <label for="exampleFormControlInput4">Електронная почта</label>
                 <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="email" value="{{ isset($profile->email) ? $profile->email : '' }}">
             </div>
-            <h4>Банковские реквизиты и реквизиты предпринимателя</h4>
+            <!-- <h4>Банковские реквизиты и реквизиты предпринимателя</h4>
             <p><span class="profile-info">*будут использованы для формирования печатной формы "Акт выполненых работ"</span></p>
             <div class="form-group">
                 <label for="exampleFormControlInput5">Код ДРФО</label>
@@ -42,7 +42,7 @@
             <div class="form-group">
                 <label for="exampleFormControlInput8">Расчетный счет</label>
                 <input name="bank_account_number" type="text" class="form-control" id="exampleFormControlInput1" placeholder="р/с" value="{{ isset($profile->bank_account_number) ? $profile->bank_account_number : '' }}">
-            </div>
+            </div> -->
             <div class="text-right">
                 <button type="submit" class="btn btn-outline-success">Сохранить</button>
                 <button type="button" onclick="window.location='{{ route('repairs') }}'" class="btn btn-outline-secondary">Отмена</button>

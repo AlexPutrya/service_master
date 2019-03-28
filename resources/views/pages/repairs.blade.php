@@ -5,18 +5,23 @@
 @section('content')
     <div class="container main">
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
-        <form id="filter" action="{{ route('repairs') }}" method="POST">
+        <form id="filter" action="{{ route('repairs_filter') }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Что искать?" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input name="search" type="text" class="form-control" placeholder="Что искать?" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <select name="" class="form-control" id="exampleFormControlSelect1">
-                            <option value="repiar_id">№ ремонта</option>
-                            <option value="phone">Телефон </option>
-                            <option value="client">ФИО клиента</option>
-                            <option value="device">Название устройства</option>
+                        <select name="search_filter" class="form-control" id="exampleFormControlSelect1">
+                            @foreach($search as $key => $value)
+                                <option value="{{ $key }}">{{$value}}</option>
+                            @endforeach
                         </select>
-                        <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+                        <button class="btn btn-outline-success" type="button" 
+                        onclick="
+                            event.preventDefault();
+                            var form = document.getElementById('filter');
+                            form.action = '{{ route('repairs_search') }}';
+                            form.submit();"
+                        ><i class="fas fa-search"></i></button>
                     </div>
                 </div>
                 <div class="form-group">
