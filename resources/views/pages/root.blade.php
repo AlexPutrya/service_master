@@ -13,42 +13,48 @@
             <img src="{{ asset('img/banner.png') }}" alt="">
         </div>
     </div>
-    <div class="root-content">
-        <div class="cont">
-            <img src="{{ asset('img/browser.svg') }}" alt="">
-            <h4>Доступ с любого места</h4>
-            <div class="text">
-                <p>Приложение работает в браузере и поетому вы можете получить доступ с любого места</p>
+    <div class="main-info">
+        <h2>Управлять ремонтами - это <span class="bold-color">легко</span></h2>
+        <p>Понимание программы займет всего несколько минут</p>
+        <div class="root-content">
+            <div class="cont">
+                <img src="{{ asset('img/browser.svg') }}" alt="">
+                <h4>Доступ с любого места</h4>
+                <div class="text">
+                    <p>Приложение работает в браузере и поетому вы можете получить доступ с любого места</p>
+                </div>
+            </div>
+            <div class="cont">
+                <img src="{{ asset('img/Smartphone Tablet.svg') }}" alt="">
+                <h4>Адаптировано под разные устройства</h4>
+                <div class="text">
+                    <p>Приложение адаптировано под разные устройства: персональный компьютер, планшет или смартфон </p>
+                </div>
+            </div>
+            <div class="cont">
+                <img src="{{ asset('img/Briefcase.svg') }}" alt="">
+                <h4>Организуйте свою работу</h4>
+                <div class="text">
+                    <p> Приложение дает возможность организовать свою работу правильно и секономить время</p>
+                </div>
+            </div>
+            <div class="cont">
+                <img src="{{ asset('img/interface.svg') }}" alt="">
+                <h4>Простота интерфейса</h4>
+                <div class="text">
+                    <p>Программа максимально проста, легкий и удобный интерфейс  </p>
+                </div>
             </div>
         </div>
-        <div class="cont">
-            <img src="{{ asset('img/Smartphone Tablet.svg') }}" alt="">
-            <h4>Адаптировано под разные устройства</h4>
-            <div class="text">
-                <p>Приложение адаптировано под разные устройства: персональный компьютер, планшет или смартфон </p>
-            </div>
-        </div>
-        <div class="cont">
-            <img src="{{ asset('img/Briefcase.svg') }}" alt="">
-            <h4>Организуйте свою работу</h4>
-            <div class="text">
-                <p> Приложение дает возможность организовать свою работу правильно и секономить время</p>
-            </div>
-        </div>
+        <a id="btn-start" class="btn btn-outline-success btn-lg" href="{{ route('register') }}">Зарегистрироватся</a>
     </div>
     <footer>
         <div class="container both-navbar">
                 <div class="nav-item"> 
-                    <a class="nav-link" href="#">О проекте</a>
+                    <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Обратная связь</a>
                 </div>
                 <div class="nav-item"> 
-                    <a class="nav-link" href="#">Помощь проекту</a>
-                </div>
-                <div class="nav-item"> 
-                    <a class="nav-link" href="#">Рекламодателям</a>
-                </div>
-                <div class="nav-item"> 
-                    <a class="nav-link" href="#">Обратная связь</a>
+                    <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> О проекте</a>
                 </div>
         </div>
     </footer>

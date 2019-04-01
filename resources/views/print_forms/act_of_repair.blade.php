@@ -20,9 +20,9 @@
         <div class="client-info">
             <p>Контактное лицо: {{ $repair->client }}</p>
             <p>Телефон: {{ $repair->phone }}</p>
+            <p>Дата регистрации: {{ $repair->register_date }}</p>
+            <p>Подпись ________</p>
         </div>
-        <p>Дата регистрации: {{ $repair->register_date }}</p>
-        <p>Подпись ________</p>
         <hr>
         <div class="org-info">
             <p>Организация(ФОП/ЧП): {{ $profile->org_name }}</p>
@@ -40,9 +40,9 @@
         <div class="client-info">
             <p>Контактное лицо: {{ $repair->client }}</p>
             <p>Телефон: {{ $repair->phone }}</p>
+            <p>Дата регистрации: {{ $repair->register_date }}</p>
+            <p>Подпись ________</p>
         </div>
-        <p>Дата регистрации: {{ $repair->register_date }}</p>
-        <p>Подпись ________</p>
         <a href="#"  class="btn btn-outline-secondary btn-block btn-lg" onclick="event.preventDefault(); window.print()">Печать</a>
     </div>
 @endsection

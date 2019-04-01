@@ -1,21 +1,29 @@
+/* Общие стили */
+    /* Убираем бутстраповскую синюю обводку  */
+        input, select, button, textarea {
+            outline: none !important;
+            box-shadow: none!important;
+        }
+    /*  */
+    
+    .main{
+        margin-top: 20px;
+        margin-bottom: 20px; 
+    }
 
-.main{
-    margin-top: 20px;
-    margin-bottom: 20px; 
-}
+    .navbar{
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+/*  */
 
-.info-message{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.navbar{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-
+/* Jumbothrone */
+    .info-message{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+/*  */
 
 /* Список ремонтов карточка ремонта */
 
@@ -58,131 +66,168 @@
 
 /* Список ремонтов карточка ремонта */
 
+    /* Форма в списке ремонтов */
+    #filter {
+        margin-top: 10px;
+    }
 
 
-.banner{
-    display: flex;
-    flex-direction: row;
-    padding: 3%;
-    margin: 0;
-    width: 100%;
-    background-color: #22B573;
-}
+    .banner{
+        display: flex;
+        flex-direction: row;
+        padding: 3%;
+        margin: 0;
+        width: 100%;
+        background-color: #22B573;
+    }
 
-.banner-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 50%;
-    color: white;
-    font-family: sans-serif;
-}
+    .banner-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 50%;
+        color: white;
+        font-family: sans-serif;
+    }
 
-.banner-content h2{
-    text-transform: uppercase;
-}
-.image{
-    width: 50%;
-}
+    .banner-content h2{
+        text-transform: uppercase;
+    }
+    .image{
+        width: 50%;
+    }
 
-.image img{
-    width: 100%;
-}
+    .image img{
+        width: 100%;
+    }
 
-.root-content{
-    padding-top: 50px;
-    padding-bottom: 50px; 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.cont{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 30%;
-}
-.cont img{
-    width: 40%;
-}
+    .root-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.cont h4{
-    color: gray;
-    margin-top: 20px;
-}
+    .main-info{
+        margin: 0;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        text-align: center;
+    }
+    .bold-color {
+        color: #22B573;
+        font-weight: bold;
+    }
+    .cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 30%;
+    }
+    .cont img{
+        width: 40%;
+    }
 
-.text{
-    width: 60%;
-}
+    .cont h4{
+        color: gray;
+        margin-top: 20px;
+    }
 
-footer{
-    background-color: #22B573;
-}
+    .text{
+        width: 60%;
+    }
 
-.both-navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    text-align: center;
-}
+    #btn-start{
+        margin-top: 10px !important; 
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
 
-.both-navbar a{
-    color: white;
-}
+    footer{
+        background-color: #22B573;
+    }
+
+    .both-navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: center;
+    }
+
+    .both-navbar a{
+        color: white;
+    }
 
 /* Карточка применется в формах входа, регистрации, восстановления пароля */
-.card{
-    margin-top: 20px;
-}
+    .card{
+        margin-top: 20px;
+    }
 
-.card-header{
-    background-color: #22B573;
-    color: white;
-    font-size: 20px;
-}
+    .card-header{
+        background-color: #22B573;
+        color: white;
+        font-size: 20px;
+    }
+/*  */
+
 /* Блок с выводом информации о браузерах */
-.browser-info{
-    margin: 5%;
-    text-align: center;
-}
-.browsers{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+    .browser-info{
+        margin: 5%;
+        text-align: center;
+    }
+    .browsers{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
-.browser{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    margin: 0px 2% 0px 2%;
-}
-.browser img{
-    width: 50%;
-}
-
+    .browser{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        margin: 0px 2% 0px 2%;
+    }
+    .browser img{
+        width: 50%;
+    }
+/*  */
 /* Профиль пользователя */
-.profile-title{
-    text-align: center;
-}
+    .profile-title{
+        text-align: center;
+    }
 
-.profile-info{
-    color: grey;
-}
+    .profile-info{
+        color: grey;
+    }
+/*  */
 
-/* Убираем бутстраповскую синюю обводку  */
-input, select, button, textarea {
-    outline: none !important;
-    box-shadow: none!important;
-}
 
+/* Акт приема- передачи */
+    .print {
+        margin-top: 20px;
+    }
+    .print h1{
+        text-align: center;
+    }
+    .print p {
+        margin: 2px;
+    }
+    .org-info{
+        text-align: right;
+    }
+
+    .client-info{
+        text-align: right;
+    }
+/*  */
+
+/* Адаптивность */
 @media(max-width: 760px){
     .card-cont{
         margin-top: 7%;
@@ -228,5 +273,4 @@ input, select, button, textarea {
     .nav-item{
         border-bottom: 1px solid white; 
     }
-
 }

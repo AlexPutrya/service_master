@@ -7,6 +7,18 @@
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
         <form id="filter" action="{{ route('repairs_filter') }}" method="POST" autocomplete="off">
                 @csrf
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1"><i class="fas fa-filter"></i> Статус</label>
+                    <select name="status" class="form-control" id="exampleFormControlSelect1" 
+                        onchange="event.preventDefault();
+                            document.getElementById('filter').submit();">
+                        <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
+                        <option value="Завершенные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
+                        <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
+                        <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
+                        <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>
+                    </select>
+                </div>
                 <div class="input-group mb-3">
                     <input name="search" type="text" class="form-control" placeholder="Что искать?" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
@@ -23,18 +35,6 @@
                             form.submit();"
                         ><i class="fas fa-search"></i></button>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1"><i class="fas fa-filter"></i> Статус</label>
-                    <select name="status" class="form-control" id="exampleFormControlSelect1" 
-                        onchange="event.preventDefault();
-                            document.getElementById('filter').submit();">
-                        <option value="В обработке" {{ $status == 'В обработке' ? 'selected' : ''}}>В обработке</option>
-                        <option value="Завершенные" {{ $status == 'Завершенные' ? 'selected' : ''}}>Завершенные</option>
-                        <option value="Не завершенные" {{ $status == 'Не завершенные' ? 'selected' : ''}}>Не завершенные</option>
-                        <option value="Принят" {{ $status == 'Принят' ? 'selected' : ''}}>Принят</option>
-                        <option value="Все" {{ $status == 'Все' ? 'selected' : ''}}>Все</option>
-                    </select>
                 </div>
             </form>
         @if(count($repairs) == 0)
