@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\StatusList;
 
 class Repairs extends Controller {
     // key => DB column "repairs"
@@ -20,11 +21,17 @@ class Repairs extends Controller {
         $repairs = DB::table('repairs')
                         ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
                         ->where('owner', '=', Auth::id())
-                        ->where('status', '=', 'В обработке')
+                        ->where('status', '=', 'in_work')
                         ->orderBy('register_date', 'DESC')
                         ->orderBy('id', 'DESC')
                         ->get();
-        return view('pages/repairs', ['search' => self::SEARCH,'repairs' => $repairs, 'status' => 'В обработке']);
+        return view('pages/repairs', [
+            'search' => self::SEARCH,
+            'repairs' => $repairs, 
+            'status' => 'in_work', 
+            'status_list' => StatusList::$filter_status_list, 
+            'status_color' => StatusList::$status_color
+        ]);
     }
 
     //  получаем данные из формы и возвращаем отфильтрованый результат
@@ -37,7 +44,13 @@ class Repairs extends Controller {
                         ->orderBy('register_date', 'DESC')
                         ->orderBy('id', 'DESC')
                         ->get();
-        return view('pages/repairs', ['search' => self::SEARCH,'repairs' => $repairs, 'status' => $status]);
+        return view('pages/repairs', [
+            'search' => self::SEARCH,
+            'repairs' => $repairs,
+            'status' => $status,
+            'status_list' => StatusList::$filter_status_list, 
+            'status_color' => StatusList::$status_color
+        ]);
     }
 
     public function search(Request $request){
@@ -53,6 +66,14 @@ class Repairs extends Controller {
                         ->orderBy('register_date', 'DESC')
                         ->orderBy('id', 'DESC')
                         ->get();
-        return view('pages/repairs', ['search' => self::SEARCH,'repairs' => $repairs, 'status' => $status]);
+        return view('pages/repairs', [
+            'request_word' => $request_word,
+            'search_filter' => self::SEARCH[$db_col],
+            'search' => self::SEARCH,
+            'repairs' => $repairs,
+            'status' => $status,
+            'status_list' => StatusList::$filter_status_list, 
+            'status_color' => StatusList::$status_color
+        ]);
     }
 }

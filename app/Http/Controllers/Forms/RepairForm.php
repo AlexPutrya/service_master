@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\StatusList;
 
 class RepairForm extends Controller {
 
@@ -16,7 +17,7 @@ class RepairForm extends Controller {
     public function index(Request $request){
         if($request->isMethod('post')){
             $register_date =  date("Y-m-d H:i:s");
-            if($request->status == "Завершенные"){
+            if($request->status == "complayted" or $request->status == "canceled"){
                 $this->end_date = date("Y-m-d H:i:s");
             }
             DB::table('repairs')->insert([
@@ -33,7 +34,7 @@ class RepairForm extends Controller {
             ]);
             return redirect()->route('repairs');
         }else{
-            return view('forms/repair_form');
+            return view('forms/repair_form', ['status_list' => StatusList::$repair_status_list]);
         }
     }
 
@@ -48,7 +49,7 @@ class RepairForm extends Controller {
             if( $repair->end_date != NULL){
                 $this->end_date = $repair->end_date;
             }else{
-                if($request->status == "Завершенные"){
+                if($request->status == "complated"){
                     $this->end_date = date("Y-m-d H:i:s");
                 }
             }
@@ -71,7 +72,7 @@ class RepairForm extends Controller {
                         ->where('owner', '=', Auth::id())
                         ->where('id', '=', $id)
                         ->first();
-            return view('forms/repair_form', ['repair' => $repair]);
+            return view('forms/repair_form', ['repair' => $repair, 'status_list' => StatusList::$repair_status_list]);
         }
     }
 }
