@@ -36,4 +36,37 @@ class RepairsModel {
                 ->orderBy('id', 'DESC')
                 ->get();
     }
+
+    public static function searchAll($db_col, $request_word){
+        return $repairs = DB::table('repairs')
+                        ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
+                        ->where('owner', '=', Auth::id())
+                        ->where($db_col, 'like', '%'.$request_word.'%')
+                        ->orderBy('register_date', 'DESC')
+                        ->orderBy('id', 'DESC')
+                        ->get();
+    }
+    
+    public static function searchNotComplayted($db_col, $request_word){
+        return $repairs = DB::table('repairs')
+                        ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
+                        ->where('owner', '=', Auth::id())
+                        ->where('status', '!=', 'complayted')
+                        ->where('status', '!=', 'canceled')
+                        ->where($db_col, 'like', '%'.$request_word.'%')
+                        ->orderBy('register_date', 'DESC')
+                        ->orderBy('id', 'DESC')
+                        ->get();
+    }
+
+    public static function searchWithStatus($status, $db_col, $request_word){
+        return $repairs = DB::table('repairs')
+                        ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
+                        ->where('owner', '=', Auth::id())
+                        ->where('status', '=', $status)
+                        ->where($db_col, 'like', '%'.$request_word.'%')
+                        ->orderBy('register_date', 'DESC')
+                        ->orderBy('id', 'DESC')
+                        ->get();
+    }
 }

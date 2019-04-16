@@ -63,14 +63,17 @@ class Repairs extends Controller {
         $request_word = $request->input('search');
         $db_col = $request->input('search_filter');
 
-        $repairs = DB::table('repairs')
-                        ->select('id', 'register_date', 'status', 'client', 'phone', 'device', 'defect')
-                        ->where('owner', '=', Auth::id())
-                        ->where('status', '=', $status)
-                        ->where($db_col, 'like', '%'.$request_word.'%')
-                        ->orderBy('register_date', 'DESC')
-                        ->orderBy('id', 'DESC')
-                        ->get();
+        switch($status){
+            case 'all':
+                $repairs = RepairsModel::searchAll($db_col, $request_word);
+            break;
+            case 'not_complayted':
+                $repairs = RepairsModel::searchNotComplayted($db_col, $request_word);
+            break;
+            default:
+                $repairs = RepairsModel::searchWithStatus($status,$db_col, $request_word);            
+        }
+
         return view('pages/repairs', [
             'request_word' => $request_word,
             'search_filter' => self::SEARCH[$db_col],
