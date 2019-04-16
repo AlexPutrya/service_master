@@ -31,6 +31,7 @@
     display: flex;
     margin-top: 5px;
     background-color: #22B573;
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
 .date-block{
@@ -63,6 +64,9 @@
     color: grey;
 }
 
+#repair_edit:hover{
+    color: black;
+}
 
 /* Список ремонтов карточка ремонта */
 

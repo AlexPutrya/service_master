@@ -20,10 +20,10 @@ class StatusList{
         'not_complayted' => 'Не завершеные'
     ];
     public static $status_color = [
-        'register' => "gray",
-        'in_work' => 'blue',
-        'complayted' => 'green',
-        'canceled' => 'red',
+        'register' => "#999999",
+        'in_work' => '#0099CC',
+        'complayted' => '#22B573',
+        'canceled' => '#CC0033',
     ];
 
 }

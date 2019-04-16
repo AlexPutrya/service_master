@@ -8,7 +8,7 @@
         <form id="filter" action="{{ route('repairs_filter') }}" method="POST" autocomplete="off" onSubmit="return false;">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1"><i class="fas fa-filter"></i> Статус</label>
+                    <label for="exampleFormControlSelect1"><i class="fas fa-filter"></i> Фильтр</label>
                     <select name="status" class="form-control" id="exampleFormControlSelect1" 
                         onchange="event.preventDefault();
                             document.getElementById('filter').submit();">
