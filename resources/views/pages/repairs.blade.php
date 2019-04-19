@@ -26,7 +26,7 @@
                         }
                     ">
                     <div class="input-group-append">
-                        <select name="search_filter" class="form-control" id="exampleFormControlSelect1">
+                        <select name="search_filter" class="form-control" id="search_filter">
                             @foreach($search as $search_val => $serach_name)
                                 <option value="{{ $search_val }}">{{$serach_name}}</option>
                             @endforeach
@@ -43,7 +43,9 @@
         </form>
         @if(isset($request_word))
             <div>
-                <p>  Результаты поиска по запросу "{{ $search_filter}}: {{ $request_word }}"</p>
+                <p>  Результаты поиска по запросу {{ $search_filter}}
+                <a href="{{ redirect()->back()->getTargetUrl() }}"> <span class="badge badge-pill badge-danger"><i class="fas fa-times-circle"></i> {{ $request_word }}</span></a>
+                </p>
             </div>
         @endif
         @if(count($repairs) == 0)
@@ -57,7 +59,7 @@
             </div>
         @else
             @foreach ($repairs as $repair)
-                <div class="repair-block">
+                <div class="repair-block" style="border-top: 3px solid {{ $status_color[$repair->status] }}">
                     <div class="date-block">
                         <div>
                             <i class="fas fa-tools"></i> {{ $repair->id }}

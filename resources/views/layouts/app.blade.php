@@ -52,9 +52,6 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item {{ request()->is('/*') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('main') }}"> Главная <span class="sr-only">(current)</span></a>
-                            </li>
                             <li class="nav-item {{ request()->is('repairs*') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('repairs') }}">Ремонты</a>
                             </li>
@@ -64,6 +61,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-envelope"></i> Обратная связь</a>
                                     <a class="dropdown-item" href="{{ route('profile') }}"><i class="fas fa-user-edit"></i> Профиль</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

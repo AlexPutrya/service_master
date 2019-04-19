@@ -25,12 +25,17 @@
     }
 /*  */
 
+/* Убираем скругление в поисковом фильтре */
+#search_filter{
+    border-radius: 0;
+}
+/*  */
+
 /* Список ремонтов карточка ремонта */
 
 .repair-block{
     display: flex;
     margin-top: 5px;
-    background-color: #22B573;
     box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
@@ -42,7 +47,6 @@
     font-family: sans-serif;
     text-transform: uppercase;
     font-size: 1.5vw;
-    color: white;
     text-align: center;
     width: 20%;
 }
@@ -250,7 +254,55 @@
         margin: 5px;
     }
 
+    /*Выводится если не заполнен профиль  */
+    #info_block {
+        margin-top: 10px;
+        position: relative;
+    }
+    .info-icon{
+        position: absolute;
+    }
+    .info-content{
+        text-align: center;
+    }
 /*  */
+
+/* Уведомление ошибки на стороне сервера */
+.server-error{
+    display: block;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    width: 90%;
+    left: 5%;
+    margin-top: 20px;
+}
+
+.error-title{
+    background-color: #22B573;
+    color: white;
+    font-size: 100px;
+}
+
+.error-message{
+    padding: 50px 0 50px 0;
+}
+.error-message h3 {
+    margin-bottom: 20px;
+}
+
+#error_back_home{
+    background-color:  #22B573;
+    border: 0;
+}
+/*  */
+
+@media(max-width: 980px){
+    .info-icon{
+        position: relative;
+    }
+}
+
 
 /* Адаптивность */
 @media(max-width: 760px){
