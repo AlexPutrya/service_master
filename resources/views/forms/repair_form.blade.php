@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput2">Номер телефона</label>
-                <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="телефон" value="{{ isset($repair->phone) ? $repair->phone : '' }}" required autofocus>
+                <input name="phone" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="телефон" value="{{ isset($repair->phone) ? $repair->phone : '' }}" required autofocus>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput3">Устройство</label>
