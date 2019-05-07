@@ -71,7 +71,7 @@
                     <div class="content-block">
                         <div class="content-container">
                             <h5>{{ $repair->device }} </h5>
-                            <h6><span style="background-color: {{ $status_color[$repair->status] }};" class="badge badge-pill badge-success">{{ $status_list[$repair->status] }}</span></h6>
+                            <h6><span style="background-color: {{ $status_color[$repair->status] }};" class="badge badge-pill badge-success">{{ $repair_status_list[$repair->status] }}</span></h6>
                         </div>
                         Описание неисправности: {{ $repair->defect }}
                         <div class="content-container">

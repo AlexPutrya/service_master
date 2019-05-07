@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Сервисный-мастер') }}</title>
+    <title> Сервис-Мастер - @yield('title') </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,18 @@
 </head>
 <body>
     <div id="app">
-        @yield('content')
+        <div class="container">
+            <div class="server-error">
+                <div class='error-title'>
+                    <p><i class="fas fa-frown"></i></p>
+                    <p>Ошибка</p>
+                </div>
+                <div class="error-message">
+                    @yield('content')
+                    <a id="error_back_home" href="{{ route('root') }}" class="btn btn-danger"> Вернутся на главную страницу</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

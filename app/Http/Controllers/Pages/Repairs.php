@@ -30,7 +30,8 @@ class Repairs extends Controller {
             'search' => self::SEARCH,
             'repairs' => $repairs, 
             'status' => 'in_work', 
-            'status_list' => StatusList::$filter_status_list, 
+            'status_list' => StatusList::$filter_status_list,
+            'repair_status_list' => StatusList::$repair_status_list,
             'status_color' => StatusList::$status_color
         ]);
     }
@@ -53,7 +54,8 @@ class Repairs extends Controller {
             'search' => self::SEARCH,
             'repairs' => $repairs,
             'status' => $status,
-            'status_list' => StatusList::$filter_status_list, 
+            'status_list' => StatusList::$filter_status_list,
+            'repair_status_list' => StatusList::$repair_status_list,
             'status_color' => StatusList::$status_color
         ]);
     }
@@ -80,7 +82,8 @@ class Repairs extends Controller {
             'search' => self::SEARCH,
             'repairs' => $repairs,
             'status' => $status,
-            'status_list' => StatusList::$filter_status_list, 
+            'status_list' => StatusList::$filter_status_list,
+            'repair_status_list' => StatusList::$repair_status_list,
             'status_color' => StatusList::$status_color
         ]);
     }

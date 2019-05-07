@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -24,6 +27,13 @@
 </head>
 <body>
     <div id="app">
+        <div class="anchor">
+            <ul>
+                <li><a href="#main"><i class="far fa-circle"></i></a></li>
+                <li><a href="#info"><i class="far fa-circle"></i></a></li>
+                <li><a href="#price"><i class="far fa-circle"></i></a></li>
+            </ul>
+        </div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

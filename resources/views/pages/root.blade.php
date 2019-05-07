@@ -3,7 +3,7 @@
 @section('title', 'Сервисный мастер')
 
 @section('content')
-    <div class="banner">
+    <div id="main" class="banner">
         <div class="banner-content">
             <h2>В помощь сервисным мастерам !</h2>
             <p>SM - это онлайн система управления сервисными ремонтами</p>
@@ -13,7 +13,7 @@
             <img src="{{ asset('img/banner.png') }}" alt="">
         </div>
     </div>
-    <div class="main-info">
+    <div  id="info" class="main-info">
         <h2>Управлять ремонтами - это <span class="bold-color">легко</span></h2>
         <p>Понимание программы займет всего несколько минут</p>
         <div class="root-content">
@@ -47,6 +47,18 @@
             </div>
         </div>
         <a id="btn-start" class="btn btn-outline-success btn-lg" href="{{ route('register') }}">Зарегистрироватся</a>
+    </div>
+    <div id="price" class="price-block">
+        <div class="price">
+            <h2>Подписка</h2>
+            <p>после окончания бесплатного триального периода (30 дней) у вас есть возможность оформить платную подписку</p>
+            <img src="{{ asset('img/calendar.png') }}" alt="">
+            <p>30 дней - 99грн</p>
+            <p>90 дней - 269грн</p>
+            <p>180 дней - 499грн</p>
+            <p>365 дней - 899грн</p>
+            <a class="btn btn-success btn-lg" href="{{ route('register') }}">Попробовать</a>
+        </div>
     </div>
     <footer>
         <div class="container both-navbar">
