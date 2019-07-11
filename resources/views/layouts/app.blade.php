@@ -27,13 +27,6 @@
 </head>
 <body>
     <div id="app">
-        <div class="anchor">
-            <ul>
-                <li><a href="#main"><i class="far fa-circle"></i></a></li>
-                <li><a href="#info"><i class="far fa-circle"></i></a></li>
-                <li><a href="#price"><i class="far fa-circle"></i></a></li>
-            </ul>
-        </div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

@@ -48,16 +48,36 @@
         </div>
         <a id="btn-start" class="btn btn-outline-success btn-lg" href="{{ route('register') }}">Зарегистрироватся</a>
     </div>
-    <div id="price" class="price-block">
-        <div class="price">
+    <div id="price">
+        <div class="price-block">
             <h2>Подписка</h2>
             <p>после окончания бесплатного триального периода (30 дней) у вас есть возможность оформить платную подписку</p>
-            <img src="{{ asset('img/calendar.png') }}" alt="">
-            <p>30 дней - 99грн</p>
-            <p>90 дней - 269грн</p>
-            <p>180 дней - 499грн</p>
-            <p>365 дней - 899грн</p>
-            <a class="btn btn-success btn-lg" href="{{ route('register') }}">Попробовать</a>
+            <div class="price-list">
+                <div class="price">
+                    <img src="{{ asset('img/calendar.png') }}" alt="">
+                    <h5>Тариф "Месяц"</h5>
+                    <p>30 дней - 99грн</p>
+                </div>
+                <div class="price">
+                    <img src="{{ asset('img/calendar.png') }}" alt="">
+                    <h5>Тариф <br> "Квартал"</h5>
+                    <h6 class="old-price"> 297грн</h6>
+                    <p>90 дней - 269грн</p>
+                </div>
+                <div class="price">
+                    <img src="{{ asset('img/calendar.png') }}" alt="">
+                    <h5>Тариф <br> "Полугодие"</h5>
+                    <h6 class="old-price"> 595грн</h6>
+                    <p>180 дней - 499грн</p>
+                </div>
+                <div class="price">
+                    <img src="{{ asset('img/calendar.png') }}" alt="">
+                    <h5>Тариф <br> "Год"</h5>
+                    <h6 class="old-price"> 1188грн</h6>
+                    <p>365 дней - 899грн</p>
+                </div>
+            </div>
+            <a class="btn btn-success btn-lg" href="{{ route('register') }}">Попробовать бесплатно</a>
         </div>
     </div>
     <footer>

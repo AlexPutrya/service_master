@@ -155,40 +155,66 @@
 
     #btn-start{
         margin-top: 10px !important;
+        margin-left: 30px;
+        margin-right: 30px; 
     }
 
 
-    .price-block{
-        height: 100vh;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        padding-top: 30px;
-        padding-bottom: 30px;
+    #price{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 30px;
         background-color: #22B573;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    .price {
-        /* height: 100vh; */
-        display: block;
+    .price-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         position: relative;
         margin: 20px 0 20px 0;
         padding: 40px;
         text-align: center;
         width: 60%;
-        left: 20%;
+        min-height: 80vh;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 3px 10px rgba(0,0,0,0.5);
     }
+   
+    .price-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
     .price img{
         width: 50%;
+    }
+
+    .price {
+        width: 25%;
         float: left;
     }
 
-    /* footer{
-        background-color: #22B573;
-    } */
+    .old-price{
+        text-decoration: line-through;
+    }
 
-    .both-navbar {
+    footer{
+        position: relative;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .both-navbar{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -327,21 +353,6 @@
 }
 /*  */
 
-/* ancor */
-.anchor {
-    position: fixed;
-    top: 50%;
-    right: 2%;
-}
-.anchor ul {
-    list-style-type: none;
-}
-.anchor a {
-    color: green;
-    text-decoration: none;
-    font-style: none;
-}
-
 @media(max-width: 980px){
     .info-icon{
         position: relative;
@@ -386,6 +397,29 @@
 
     .text{
         width: 80%;
+    }
+
+    #price {
+        padding: 10px;
+    }
+
+    .price-block {
+        margin: 10px 0 10px 0;
+        padding: 20px;
+        text-align: center;
+        width: 95%;
+    }
+
+    .price-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price {
+        width: 90%;
+    }
+    .price img{
+        width: 100%;
     }
 
     .both-navbar {
