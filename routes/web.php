@@ -14,6 +14,9 @@
 // Root page view all
 Route::get('/', 'Pages\Root')->name('root');
 Auth::routes();
+
+Route::get('/feedback', 'Forms\Feedback')->name('feedback');
+
 Route::middleware(['auth'])->group(function(){
     
     // Pages

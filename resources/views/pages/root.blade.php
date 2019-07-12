@@ -83,7 +83,7 @@
     <footer>
         <div class="container both-navbar">
                 <div class="nav-item"> 
-                    <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Обратная связь</a>
+                    <a class="nav-link" href="{{ route('feedback') }}"><i class="fas fa-envelope"></i> Обратная связь</a>
                 </div>
         </div>
     </footer>
