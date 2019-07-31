@@ -353,6 +353,13 @@
 }
 /*  */
 
+/* Уведомление об окончании подпички */
+#end_of_subscribe{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
 @media(max-width: 980px){
     .info-icon{
         position: relative;

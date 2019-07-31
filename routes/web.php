@@ -15,7 +15,8 @@
 Route::get('/', 'Pages\Root')->name('root');
 Auth::routes();
 
-Route::get('/feedback', 'Forms\Feedback')->name('feedback');
+Route::get('/feedback', 'Forms\Feedback@index')->name('feedback');
+Route::post('/send_feedback', 'Forms\Feedback@send')->name('send_feedback');
 
 Route::middleware(['auth'])->group(function(){
     

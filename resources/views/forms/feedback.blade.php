@@ -3,9 +3,16 @@
 @section('title', 'Обратная связь')
 
 @section('content')
+    <!-- Уведомление о успешной отправке письма обратной связи -->
+    @if (session('send_status'))
+        <div class="alert alert-success">
+            {{ session('send_status') }}
+        </div>
+    @endif
+
     <div class="container main">
         <div class="feedback">
-            <form action="">
+            <form action="{{ route('send_feedback') }}" method="POST">
                 @csrf
                 <h2>Форма обратной связи</h2>
                 <div class="form-group">
@@ -18,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Текст сообщения:</label>
-                    <textarea name="complect" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                    <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-outline-success">Отправить</button>

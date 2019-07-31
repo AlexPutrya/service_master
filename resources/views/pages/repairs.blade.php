@@ -3,6 +3,18 @@
 @section('title', 'Ремонты')
 
 @section('content')
+    
+    <!--Уведомление об окончании подписки -->
+        <div id="end_of_subscribe" class="alert alert-danger">
+            Ваша подписка закончится xx.xx.xxxx , <a href="#">продлить подписку</a>
+            <a href="#"
+                onclick="event.preventDefault();
+                sub_window = document.getElementById('end_of_subscribe');
+                sub_window.style.display = 'none';">
+                <i class="far fa-window-close"></i>
+            </a>
+        </div>
+
     <div class="container main">
         <a href="{{ route('new_repair') }}" class="btn btn-outline-success btn-block btn-lg"> <i class="fas fa-plus"></i> НОВЫЙ РЕМОНТ</a>
         <form id="filter" action="{{ route('repairs_filter') }}" method="POST" autocomplete="off" onSubmit="return false;">
